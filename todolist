@@ -1,0 +1,30 @@
+def add():
+    while True:
+        task = input("Add a task (q for quit): ").lower()
+        if task == "q":
+            break  
+        with open('task.txt', 'a') as f:
+            f.write(task + "\n")  
+
+def view():
+    with open('task.txt', 'r') as f:
+        for line in f.readlines():
+            data = line.rstrip()
+            print("Task:", data)
+    print()
+
+while True:
+    ctask = input("What do you want (add, view, q): ").lower()
+
+    if ctask == "add":
+        add()
+
+    elif ctask == "view":
+        view()
+
+    elif ctask == "q":
+        print("Goodbye!")
+        break 
+
+    else:
+        print("Invalid option, please choose again.")
