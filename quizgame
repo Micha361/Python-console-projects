@@ -1,0 +1,28 @@
+i = 0
+
+print("Welcome! Do you want to play?")
+game = input("yes/no: ")
+
+if game != "yes":
+    quit()
+
+print("Perfect, let's begin!")
+print()
+
+answer1 = input("What is the freezing point (in Celsius)? ")
+
+if answer1 != "0":
+    quit1 = input("Wrong! Do you want to continue? (yes/no): ")
+    if quit1 != "yes":
+        quit()
+else:
+    i += 1
+
+answer2 = input("What does 'hello' mean in German? ")
+
+if answer2 != "hallo":
+    print("Wrong!")
+else:
+    i += 1
+
+print("You got " + str(i) + " questions right.")
