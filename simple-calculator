@@ -1,0 +1,27 @@
+x = (int(input("whats x: ")))
+y = (int(input("whats y: ")))
+func = input("addition(1), subtraction(2), multiplication(3), division(4): ")
+
+def add():
+    print(x + y)
+
+def sub():
+    print(x - y)
+    
+def mult():
+    print(x * y)
+
+def div():
+    print(x / y)
+
+if func == "1":
+    add()
+
+if func == "2":
+    sub()
+
+if func == "3":
+    mult()
+
+if func == "4":
+    div()
