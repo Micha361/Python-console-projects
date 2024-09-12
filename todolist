@@ -13,14 +13,22 @@ def view():
             print("Task:", data)
     print()
 
+def clear():
+    with open('task.txt', 'w') as f:
+        pass 
+    print("All tasks have been cleared.")
+
 while True:
-    ctask = input("What do you want (add, view, q): ").lower()
+    ctask = input("What do you want (add, view, clear, q): ").lower()
 
     if ctask == "add":
         add()
 
     elif ctask == "view":
         view()
+
+    elif ctask == "clear":
+        clear()
 
     elif ctask == "q":
         print("Goodbye!")
