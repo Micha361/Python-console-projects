@@ -12,7 +12,7 @@ def withdrawl():
         money = int(f.read().strip()) 
     
     take = int(input("\nHow much do you want to withdraw: "))
-    
+        
     money -= take
     with open('ballance.txt', 'w') as f:
             f.write(str(money))
@@ -30,7 +30,7 @@ while is_running == True:
     print("\naccount ballance (1)")
     print("whithdrawl       (2)")
     print("deposit          (3)")
-    print("exit ballance    (q)")
+    print("exit    (q)")
     
     choice = input("\nselect youre option: ")
     
@@ -45,3 +45,6 @@ while is_running == True:
     
     elif choice == "3":
         deposit()
+
+    else:
+        print("invalid option ")
