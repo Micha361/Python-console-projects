@@ -1,0 +1,47 @@
+money = 0
+is_running = True
+
+def ballance():
+    with open('ballance.txt', 'r') as f:
+        data = f.read().strip()
+        print("Your account balance is", data)
+        
+def withdrawl():
+    global money
+    with open('ballance.txt', 'r') as f:
+        money = int(f.read().strip()) 
+    
+    take = int(input("\nHow much do you want to withdraw: "))
+    
+    money -= take
+    with open('ballance.txt', 'w') as f:
+            f.write(str(money))
+
+def deposit():
+    global money
+    with open('ballance.txt', 'r') as f:
+        money = int(f.read().strip()) 
+    give = int(input("\nHow much do you want to deposit: "))
+    money += give
+    with open('ballance.txt', 'w') as f:
+        f.write(str(money))
+
+while is_running == True:
+    print("\naccount ballance (1)")
+    print("whithdrawl       (2)")
+    print("deposit          (3)")
+    print("exit ballance    (q)")
+    
+    choice = input("\nselect youre option: ")
+    
+    if choice == "q":
+        quit() 
+    
+    elif choice == "1":
+        ballance()
+        
+    elif choice == "2":
+        withdrawl()
+    
+    elif choice == "3":
+        deposit()
